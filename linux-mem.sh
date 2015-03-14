@@ -27,11 +27,11 @@ cd volatility/tools/linux
 make >> ${HOSTNAME}.${DATE}.log 2>&1
 echo $?
 cd ../../..
-sudo zip ${VERSION}.zip volatility/tools/linux/module.dwarf /boot/System.map-$VERSION >> ${HOSTNAME}.${DATE}.log 2>&1
+zip ${VERSION}.zip volatility/tools/linux/module.dwarf /boot/System.map-$VERSION >> ${HOSTNAME}.${DATE}.log 2>&1
 
 echo "Creating LR bundle..." | tee -a ${HOSTNAME}.${DATE}.log
 echo "" | tee -a ${HOSTNAME}.${DATE}.log
-sudo zip ${HOSTNAME}.${DATE}.zip ${VERSION}.zip lime-${VERSION}.ko memdump.lime >> ${HOSTNAME}.${DATE}.log 2>&1
+zip ${HOSTNAME}.${DATE}.zip ${VERSION}.zip lime-${VERSION}.ko memdump.lime >> ${HOSTNAME}.${DATE}.log 2>&1
 
 echo "Cleaning up..." | tee -a ${HOSTNAME}.${DATE}.log
 echo "" | tee -a ${HOSTNAME}.${DATE}.log
